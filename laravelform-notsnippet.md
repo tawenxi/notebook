@@ -137,3 +137,109 @@
 
 ```
 
++ bootselectyear
+```
+<div class="form-group{{ $errors->has('year') ? ' has-error' : '' }}">
+    {!! Form::label('year', 'Year') !!}
+    {!! Form::selectYear('year', date('Y'), date('Y') + 10, null, ['class' => 'form-control', 'required' => 'required']) !!}
+    <small class="text-danger">{{ $errors->first('year') }}</small>
+</div>
+
+```
+
++ bootselectrange
+```
+<div class="form-group{{ $errors->has('range') ? ' has-error' : '' }}">
+    {!! Form::label('range', 'Input label') !!}
+    {!! Form::selectRange('range', 0, 10, ['class' => 'form-control', 'required' => 'required']) !!}
+    <small class="text-danger">{{ $errors->first('range') }}</small>
+</div>
+
+```
+
++ boottextarea
+```
+<div class="form-group{{ $errors->has('inputname') ? ' has-error' : '' }}">
+    {!! Form::label('inputname', 'Input label') !!}
+    {!! Form::textarea('inputname', null, ['class' => 'form-control', 'required' => 'required']) !!}
+    <small class="text-danger">{{ $errors->first('inputname') }}</small>
+</div>
+```
+
++ boottext
+```
+<div class="form-group{{ $errors->has('inputname') ? ' has-error' : '' }}">
+    {!! Form::label('inputname', 'Input label') !!}
+    {!! Form::text('inputname', null, ['class' => 'form-control', 'required' => 'required']) !!}
+    <small class="text-danger">{{ $errors->first('inputname') }}</small>
+</div>
+
+```
+
++ bootcheckboxh
+```
+<div class="form-group">
+    <div class="col-sm-offset-3 col-sm-9">
+        <div class="checkbox{{ $errors->has('checkbox_id') ? ' has-error' : '' }}">
+            <label for="checkbox_id">
+                {!! Form::checkbox('checkbox_id', '1', null, ['id' => 'checkbox_id']) !!} Checkbox label
+            </label>
+        </div>
+        <small class="text-danger">{{ $errors->first('checkbox_id') }}</small>
+    </div>
+</div>
+
+```
+
++ bootdateh
+```
+<div class="form-group{{ $errors->has('date') ? ' has-error' : '' }}">
+    {!! Form::label('date', 'Input label', ['class' => 'col-sm-3 control-label']) !!}
+    <div class="col-sm-9">
+        {!! Form::date('date', null, ['class' => 'form-control', 'required' => 'required']) !!}
+        <small class="text-danger">{{ $errors->first('date') }}</small>
+    </div>
+</div>
+
+```
+
++ bootselectmonth
+```
+<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+    {!! Form::label('email', 'Email address') !!}
+    {!! Form::email('email', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'eg: foo@bar.com']) !!}
+    <small class="text-danger">{{ $errors->first('email') }}</small>
+</div>
+
+```
+
++ bootselectmonth
+```
+<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+    {!! Form::label('email', 'Email address') !!}
+    {!! Form::email('email', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'eg: foo@bar.com']) !!}
+    <small class="text-danger">{{ $errors->first('email') }}</small>
+</div>
+
+```
+
+```
+    Input   Shortcut
+    Checkbox    bootcheckboxh
+    Date    bootdateh
+    Email   bootemailh
+    File    bootfileh
+    Number  bootnumberh
+    Password    bootpasswordh
+    Radio   bootradioh
+    Select  bootselecth
+    SelectMonth     bootselectmonthh
+    SelectYear  bootselectyearh
+    SelectRange     bootselectrangeh
+    Text    boottextareah
+    Textarea    boottexth
+```
+>这些都是在后面加一个h表示Horizontal inputs。就是lable和表单在同一行
+
+******************************************************
+
