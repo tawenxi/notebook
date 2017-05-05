@@ -1,4 +1,4 @@
-#laravel_forms_boostrap_snippets
+# laravel_forms_boostrap_snippets
     
 
 
@@ -86,47 +86,48 @@
 
 ```
 
-+ bootemail
++ bootnumber
 ```
-<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-    {!! Form::label('email', 'Email address') !!}
-    {!! Form::email('email', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'eg: foo@bar.com']) !!}
-    <small class="text-danger">{{ $errors->first('email') }}</small>
+<div class="form-group{{ $errors->has('inputname') ? ' has-error' : '' }}">
+    {!! Form::label('inputname', 'Input label') !!}
+    {!! Form::number('inputname', null, ['class' => 'form-control', 'required' => 'required']) !!}
+    <small class="text-danger">{{ $errors->first('inputname') }}</small>
 </div>
 
 ```
 
-+ bootemail
++ bootpasword
 ```
-<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-    {!! Form::label('email', 'Email address') !!}
-    {!! Form::email('email', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'eg: foo@bar.com']) !!}
-    <small class="text-danger">{{ $errors->first('email') }}</small>
+<div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+    {!! Form::label('password', 'Password') !!}
+    {!! Form::password('password', ['class' => 'form-control', 'required' => 'required']) !!}
+    <small class="text-danger">{{ $errors->first('password') }}</small>
 </div>
 
 ```
 
-+ bootemail
++ bootadoi
 ```
-<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-    {!! Form::label('email', 'Email address') !!}
-    {!! Form::email('email', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'eg: foo@bar.com']) !!}
-    <small class="text-danger">{{ $errors->first('email') }}</small>
+<div class="radio{{ $errors->has('radio_group_name') ? ' has-error' : '' }}">
+    <label for="radio_group_name">
+        {!! Form::radio('radio_group_name', "333",  "null", ['id' => 'radio_id radio']) !!} Checkbox label
+    </label>
+    <small class="text-danger">{{ $errors->first('radio_group_name') }}</small>
 </div>
 
 ```
 
-+ bootemail
++ bootselect
 ```
-<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-    {!! Form::label('email', 'Email address') !!}
-    {!! Form::email('email', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'eg: foo@bar.com']) !!}
-    <small class="text-danger">{{ $errors->first('email') }}</small>
+<div class="form-group{{ $errors->has('inputname') ? ' has-error' : '' }}">
+    {!! Form::label('inputname', 'Input label') !!}
+    {!! Form::select('inputname', $options, null, ['id' => 'inputname', 'class' => 'form-control', 'required' => 'required', 'multiple']) !!}
+    <small class="text-danger">{{ $errors->first('inputname') }}</small>
 </div>
 
 ```
 
-+ bootemail
++ bootselectmonth
 ```
 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
     {!! Form::label('email', 'Email address') !!}
