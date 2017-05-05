@@ -85,11 +85,13 @@ class Name extends ExtendsName
 
 
 + case
->
+
+```
 case expr:
-	
-	break;
->
+    
+    break;
+```
+
 
 
 + class
@@ -127,7 +129,8 @@ $name = function ($value) use ($name)  {
 ```function __construct($foo = null)
 {
     $this->foo = $foo;
-}```
+}
+```
 
 
 + def and def?
