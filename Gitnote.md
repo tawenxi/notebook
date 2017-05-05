@@ -30,6 +30,13 @@ git config --global alias.st status
 >	hard:这个要谨慎使用，因为他会丢失现在工作区的数据
 >	soft:仅仅一定指针
 >	mixed：默认参数，移动指针+恢复index
+>    
+>    
+>    
+
+
+
+
 
 
 
