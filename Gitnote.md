@@ -6,7 +6,7 @@ git diff
 git diff --cached
 git status -s
 git reset HEAD (git rm 表示记录一个删除的操作之后)
-git reset HEAD -- <file>
+git reset HEAD -- file
 
 Git必须知道当前版本是哪个版本，在Git中，用HEAD表示当前版本，，上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。
 
@@ -23,7 +23,7 @@ git config --global alias.st status
 [alias]  
   ll = log --decorate --graph --oneline  
 
-* git reset <file> head(^)
+* git reset file head(^)
 表示从commit中还原一个文件到index区域。不用跟上--参数。
 * git reset --(hard mixed soft) head(^)
 > 表示指针移动到某个commit
