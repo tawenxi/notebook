@@ -45,8 +45,7 @@ $_SESSION['variable']
  * 
  */```
 
-
-+ am
++ am--
 
 ```
 $name = array_map(function ($value) {
@@ -55,7 +54,7 @@ $name = array_map(function ($value) {
 ```
 
 
-+ array
++  array
 
 
 ```
@@ -837,14 +836,15 @@ var_dump($); exit;
 
 
 
-+ while
++ while  
+
 
 
 ```
-while (expr) {
+while (expr) {}
 ```
     
-}
+
 
 
 
