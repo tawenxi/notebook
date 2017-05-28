@@ -107,6 +107,22 @@ $filtered->all();
 
 以一对指定的「键／数值」筛选集合：
 
+```
+        $res= $import->all()->map(function($v){
+            if($v->amount==300){
+                return $v;
+            }
+          
+        })->filter(function($v){
+            return $v!=null;
+
+        })->flatten(1)->toArray();
+
+
+        $res= collect($import->all()->toArray())->where('amount',26999.0);
+        $res= $import->all()->where('amount',3644.99)
+```
+
 + 排序 
 ``` $res1= $import->all()->sortByDesc('amount');```
 
@@ -115,4 +131,28 @@ values()#
 
 返回「键」重新被设为「连续整数」的新集合：
 
+
+
++ echo 和map的区别
+```
+
+       $res= $import->all()->each(function($v){
+         $v->put('ok',120);  
+       });
+```
+
+```
+       $res= $import->all()->map(function($v){
+         return $v->put('ok',120);  
+       });
+
+```
+
+研究出了增加字段的操作
+
+```
+       $res= $import->all()->each(function($v){
+         $v->put('ok',$v->amount*10);  
+       });
+```
 
