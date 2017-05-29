@@ -156,3 +156,40 @@ values()#
        });
 ```
 
+
+### RowdCollection集合的特点：
+$res=$import->get([字段信息])这个集合有对象的属性叶有数组的属性，$import可以是一个喂喂数组，叶可以是一个对象，叶可以是一个集合，集成了多种特点。
++ 数组特性：可以用$res[0][name]
++ 对象特性：可以用$res[0]->name, 但是访问没有的设置的属性就会失败，会在item的同级上新建一个新属性，该属性和item同级。所以如果要进行运算最好还是使用数组方式访问
++ 集合属性：可以用所有的集合函数进行预算。
+
+弟弟的指点代码
+```
+route.php
+
+    Route::get('/hello', function() {
+        $salaries = Salary::with('member')->get();
+        foreach ($salaries as $salary) {
+            echo $salary->account.'<br>';
+            echo $salary->member->bumen.'<br>';
+            echo $salary->member->name.'<br>';
+            echo '<br>';
+        }
+    });
+
+Salary类：
+
+    public function member()
+    {
+        return $this->belongsTo(Member::class, 'name', 'name');
+    }
+
+
+Member类：
+
+    public function salaries()
+    {
+       return $this->hasMany(Salary::class, 'name', 'name');
+    }
+```
+
