@@ -39,3 +39,17 @@ Checkout branch
 checkout -b branch
 -------
 创建切换分支
+
+
+git checkout Head -- .   把Head的内容覆盖Index（工作区） 和缓存区
+git checkout Head -- file   把Head的内容覆盖Index（工作区） 和缓存区
+
+git reset Head 2.php 重置 暂缓区
+git reset 9bf0c91 2.php  
+git reset --hard 9bf0c91 2.php 报错fatal: Cannot do hard reset with paths.
+
+
+
+
+
+
