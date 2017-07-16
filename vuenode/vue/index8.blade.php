@@ -3,6 +3,8 @@
 <head>
 	<title>VueJs</title>
 	<script src="http://cdn.bootcss.com/vue/1.0.14/vue.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/app.css">
+
 
   <style>
     .completed{
@@ -14,7 +16,7 @@
 <body>
 <div id="app">
 
-<task-app :list="tasks"> {{-- **list绑定** --}}
+<task-app :list="tasks"> {{-- **list绑定** 当tasks为vue对象的data的时候需要加冒号绑定--}}
   
 </task-app> 
 
@@ -40,7 +42,7 @@
 
 Vue.component('task-app',{
   template:'#task-template',
-  props:['list'],
+  props:['list'],//数据导入接口
       methods:{
       changeTag(task){
         task.completed=!task.completed;
