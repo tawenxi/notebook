@@ -72,10 +72,34 @@ public function favorite(){
     return $this->belonsTomany(User:class,'favor');
 }
 这里第二个参数接一个favor表
+favor中间表包含两个字段一个 post_id,一个是user_id;
+增加关联记录的操作是 $user->favorite()->attach($post); 返回NULL
+取消关联记录的操作是 $user->favorite()->detach($post);
+
+在5.3中新增了toggle方法，可以代替attach 和detach方法。
+操作发昂发是 $user->favorite()->toggle($post); 返回一个数组key分别是attach和detach。
+
+-5.3新特性：make:notification PostPublished 邮件通知
+$user->notify(new \App\Notifications\PostPublished($post));
+就可以通知用户了。
+
 
 -------
 
-5.4新特性:make controller 有一个参数-r 和-m=post   
+- 5.4新特性:make controller 有一个参数-r 和-m=post  
+- 5.4新特性：路由可以使用链式调用，route::name('home')->prefix('admin')->middleware('admin')->get('/home',function(){ return 'home'})
+- 5.4新特性：Hight Order Message
+  $post->each->archive()  这个可以返回整个集合
+  $post->map->archive()   而这个只返回 实际的archive()方法的返回结果也就是true
+  $post->map->title; 就等于$post->pluch('title')
+  Hight Order Message 只对contains,each,every,filter,first,map,partition,reject,sortBy,sortByDesc,sum 起作用。
+- 5.4新特性：blade中的component标签，作用：可以代替@include标签
+  @component('blade文件')
+    @slot('heading')heading 是一个变量名
+        hello,world
+    @endslot
+  @endcomponent
+
 
 
 -------
@@ -90,5 +114,8 @@ public function favorite(){
 5.5新特性:简单的静态页面路由
 route ::get ("/","welcome",["v"=>1]);
 5.5新特性:consele 不用注册。
+
+-----
+PHP7新特性：$var ?? '默认值'
 
 
