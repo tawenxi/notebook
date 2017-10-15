@@ -119,3 +119,37 @@ route ::get ("/","welcome",["v"=>1]);
 PHP7新特性：$var ?? '默认值'
 
 
+- manytomany 总结
+    public function followers()
+    {
+        return $this->belongsToMany(self::class, 'followers', '少（我）', '多（目标）')->withTimestamps();
+    }
+$user->followers()->pluck('followers') 可以取得目标id的数组
+$user->followers()->get() 可以取得带 pivot的二维集合；
+save和attach效果一样，detach是删除记录的
+save必须接对象，而attach和detach 可以接id叶可以接对象
+toggle 可以接id也可以接对象。
+
+# 站内信
++ php artisan make:notification NewUserFollowNotification
++ php artisan notification:table
+    public function toDatabase($notifiable)
+    {
+        return [
+        'name'=>\Auth::guard('api')->user()->name,
+        ];  
+    }
+
+在控制器中用
+$userToFollow->notify(new \App\Notifications\NewUserFollowNotification());
+就可以在数据库中的notification表插入一条站内信了。
+然后创建一个blade用来展示站内信，模板中使用$user->notifications 就可以拿到该用户的所有站内信。数据库字段notifiable_id 就是站内信的所有者id
+
+# 使用(自定义Notification  User事件通知)发送邮件
+
+
+
+
+
+
+

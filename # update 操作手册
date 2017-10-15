@@ -1,0 +1,20 @@
+# update 操作手册
+
+## php artisan update:R9
++ 没有参数
++ option选项
+  --only=backup 只备份数据
+  --only=allrollback 只进行MSSQL还原
+  --only=nobackup 不进行数据备份就进行数据上传操作
+
+
+
+  git stash && git checkout MSSQLDABATABASE && php artisan update:R9 --only=backup && git add . && git commit -m'save GL_Pz Seed file'
+&& git checkout master && git stash pop
+
+
+alias updater
+php artisan update:R9 --only=nobackup && git stash && git checkout MSSQLDABATABASE && php artisan update:R9 --only=backup && git add . && git commit -m'save GL_Pz Seed file' && git checkout master && git stash pop && git status
+
+一般先进行php artisan insert:account 2
+再进行updater 在master下,运行完后 再进行status检查  如果出现倒退现象 再进行checkout
