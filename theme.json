@@ -1,0 +1,46 @@
+{
+	"always_show_minimap_viewport": true,
+	"bold_folder_labels": true,
+	"color_scheme": "Packages/Theme - Spacegray/base16-eighties.dark.tmTheme",
+	"default_line_ending": "unix",
+	"font_options":
+	[
+		"gray_antialias",
+		"subpixel_antialias"
+	],
+	"font_size": 12,
+	"ignored_packages":
+	[
+		"Material Theme",
+		"Vintage"
+	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
+	"line_padding_bottom": 3,
+	"line_padding_top": 3,
+	"overlay_scroll_bars": "enabled",
+  "theme": "Spacegray Eighties.sublime-theme",
+  "color_scheme": "Packages/Theme - Spacegray/base16-eighties.dark.tmTheme",
+    "spacegray_tabs_font_small": true,
+
+  "spacegray_tabs_font_normal": true,
+
+  "spacegray_tabs_font_large": true,
+
+  "spacegray_tabs_font_xlarge": true,
+
+    "spacegray_tabs_small": true,
+
+  "spacegray_tabs_normal": true,
+
+  "spacegray_tabs_large": true,
+
+  "spacegray_tabs_xlarge": true,
+    "spacegray_tabs_auto_width": true,
+    "spacegray_fileicons": true,
+
+
+}

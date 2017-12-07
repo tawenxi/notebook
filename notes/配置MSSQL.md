@@ -48,3 +48,8 @@ Finally you should create a locales.conf file within /etc/freetds to allow corre
     charset = iso_1
 
 Last, restart your server vagrant halt && vagrant up (Just restarting nginx doesn't cause the settings to take effect.)
+
+
+
+
+alias updater='php artisan update:R9 --only=nobackup && git stash && git checkout MSSQLDABATABASE && php artisan update:R9 --only=backup && git add . && git commit -m"save GL_Pz Seed file" && git checkout master && git stash pop && git status'

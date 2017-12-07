@@ -1,0 +1,3 @@
++ 转化成非解析html函数
+ htmlspecialchars(string)
+ 
